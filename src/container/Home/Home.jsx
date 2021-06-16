@@ -16,7 +16,6 @@ export default class Home extends Component {
     return (
       <Router>
         <>
-          {/* <Halo /> */}
           <button className="navigation">
             <Link to="/">Blog Post</Link>
           </button>
