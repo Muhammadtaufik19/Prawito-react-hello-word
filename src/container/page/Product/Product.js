@@ -4,10 +4,10 @@ import React, { Component, Fragment } from "react";
 import "./Product.css";
 
 // image
-import logo from "../../assets/images/logo.jpg";
-import troly from "../../assets/images/troly.jpg";
-import ayam from "../../assets/images/ayam.jpg";
-import CardProduct from "../CardProduct/CardProduct";
+import logo from "../../../assets/images/logo.jpg";
+import troly from "../../../assets/images/troly.jpg";
+import ayam from "../../../assets/images/ayam.jpg";
+import CardProduct from "./CardProduct/CardProduct";
 
 export default class Product extends Component {
   state = {

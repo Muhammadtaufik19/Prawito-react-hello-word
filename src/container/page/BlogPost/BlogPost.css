@@ -128,3 +128,19 @@ button.btn-submit:hover{
     background: white;
     cursor: pointer;
 }
+
+.p-detail-post {
+    padding: 0px;
+}
+
+.detail-title, .detail-id {
+    font-size: 24px;
+    font-weight: bold;
+    color: burlywood;
+    text-transform: capitalize;
+}
+
+.detail-body {
+    font-size: 18px;
+    color: coral;
+}

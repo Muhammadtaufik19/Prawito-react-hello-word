@@ -90,6 +90,7 @@ export default class BlogPost extends Component {
     });
   };
 
+  // fungsi submit
   handleSubmit = () => {
     if (this.state.isUpdate) {
       this.putDataToAPI();
@@ -104,6 +105,11 @@ export default class BlogPost extends Component {
         },
       });
     }
+  };
+
+  // fungsi go tetail
+  handleDetail = (id) => {
+    this.props.history.push(`/detail-post/${id}`);
   };
 
   // Pemanggilan Fake API dengan "fetch" dan "axios"
@@ -156,6 +162,7 @@ export default class BlogPost extends Component {
               data={post}
               remove={this.handleRemove}
               update={this.handleUpdate}
+              goDetail={this.handleDetail}
             />
           );
         })}

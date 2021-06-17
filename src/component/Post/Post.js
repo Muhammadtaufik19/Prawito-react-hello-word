@@ -1,4 +1,5 @@
 import React from "react";
+import "./Post.css";
 
 export default function Post(props) {
   // console.log("ini", props);
@@ -9,7 +10,9 @@ export default function Post(props) {
       </div>
       <div className="content">
         <p className="id">ID ke : {props.data.id}</p>
-        <p className="title">{props.data.title}</p>
+        <p className="title" onClick={() => props.goDetail(props.data.id)}>
+          {props.data.title}
+        </p>
         <p className="decs">{props.data.body}</p>
         <button
           className="remove"
