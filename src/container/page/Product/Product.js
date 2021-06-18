@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
 
 // style
 import "./Product.css";
@@ -9,11 +10,11 @@ import troly from "../../../assets/images/troly.jpg";
 import ayam from "../../../assets/images/ayam.jpg";
 import CardProduct from "./CardProduct/CardProduct";
 
-export default class Product extends Component {
-  state = {
-    order: 1,
-    name: "Taufik",
-  };
+class Product extends Component {
+  // state = {
+  //   order: 1,
+  //   name: "Taufik",
+  // };
 
   // Fungsi
   // Props "onCounterChange" dikirim ke child
@@ -36,13 +37,20 @@ export default class Product extends Component {
           </div>
           <div className="troley">
             <img src={troly} alt="troly" />
-            <div className="count">{this.state.order}</div>
+            <div className="count">{this.props.order}</div>
           </div>
         </div>
-        <CardProduct
-          onCounterChange={(value) => this.handleCounterChange(value)}
-        />
+        <CardProduct />
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    order: state.totalOrder,
+  };
+};
+
+export default connect(mapStateToProps)(Product);
+// export default connect(stateGlobal, dispatch)(Product);

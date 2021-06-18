@@ -1,7 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import YouTubeComp from "../../../component/YouTubeComp/YouTubeComp";
 
-export default function Halo() {
+export default function Halo(props) {
   return (
     <div>
       <h5>Halo Youtube Component</h5>
@@ -14,6 +15,8 @@ export default function Halo() {
         title="React js bagian 4"
         desc="30x di tonton"
       />
+      <hr />
+      <p>Total order : xxx</p>
     </div>
   );
 }

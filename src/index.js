@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import "./index.css";
-import App from "./App";
+// import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 // // Routing sendiri
@@ -9,12 +9,50 @@ import reportWebVitals from "./reportWebVitals";
 import Home from "./container/Home/Home";
 // import Parent from "./example/Parent/Parent";
 
+// Management state dengan redux ____________________________________________________
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+
+// State global
+const globalState = {
+  totalOrder: 1,
+  value: 5,
+};
+
+// Reducer
+const rootReducer = (state = globalState, action) => {
+  if (action.type === "PLUS_ORDER") {
+    return {
+      ...state,
+      totalOrder: state.totalOrder + 1,
+      value: state.value + 1,
+    };
+  }
+  if (action.type === "MINUS_ORDER") {
+    let totalOrderMinim = 0;
+    if (state.totalOrder > 0) {
+      return {
+        ...state,
+        totalOrder: state.totalOrder - 1,
+        value: state.value - 1,
+      };
+    }
+    return {
+      totalOrder: totalOrderMinim,
+    };
+  }
+  return state;
+};
+
+// Store global
+const storeRedux = createStore(rootReducer);
+
 ReactDOM.render(
   <React.StrictMode>
     <div>
-      <Home />
-      {/* <App /> */}
-      {/* <Parent /> */}
+      <Provider store={storeRedux}>
+        <Home />
+      </Provider>
     </div>
   </React.StrictMode>,
   document.getElementById("root")

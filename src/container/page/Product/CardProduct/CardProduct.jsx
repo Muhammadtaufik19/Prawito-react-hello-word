@@ -54,7 +54,7 @@ export default class CardProduct extends Component {
           </div>
           <p className="product-title">Daging ayam</p>
           <p className="product-price">Rp 50.000</p>
-          <Counter onCounterChange={(val) => this.props.onCounterChange(val)} />
+          <Counter />
           {/* <div className="counter">
             <button className="minus" onClick={this.handleMinus}>
               {" "}
